@@ -7,6 +7,5 @@
     "common-pitfalls-when-writing-server-side-code.md",
     "common-design-patterns-for-building-a-distributed-system.md",
     "overview-of-a-simple-distributed-messaging-system.md",
-    "scaling-distributed-systems.md",
-    "adding-data-persistence.md"
+    "scaling-distributed-systems.md"
 ]
