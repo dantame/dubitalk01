@@ -1,0 +1,8 @@
+{
+  "name": "distributed-realtime-messaging-in-nodejs",
+  "version": "0.0.0",
+  "dependencies": {
+    "reveal.js": "~3.1.0",
+    "reveal-highlight-themes": "~8.3.0"
+  }
+}

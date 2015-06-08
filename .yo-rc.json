@@ -1,0 +1,11 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Distributed Realtime Messaging in Node.JS",
+    "packageVersion": "0.0.0",
+    "revealTheme": "blood",
+    "useSass": false,
+    "deployToGithubPages": true,
+    "githubUsername": "dantame",
+    "githubRepository": "dubitalk01"
+  }
+}
