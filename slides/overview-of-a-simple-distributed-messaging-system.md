@@ -2,7 +2,7 @@
 
 -------------
 
-![Simple Distributed System](simple-distributed-system.jpg)
+![Simple Distributed System](images/simple-distributed-system.jpg)
 
 note:
     The system is composed of three main parts.

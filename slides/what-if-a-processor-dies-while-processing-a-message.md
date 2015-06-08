@@ -2,7 +2,7 @@
 
 -------------
 
-![Simple Distributed System](simple-distributed-system.jpg)
+![Simple Distributed System](images/simple-distributed-system.jpg)
 
 note:
     A key factor of distributed systems is the ability to tolerate failure. We can demonstrate this in our simple example by talking about the event of a message processor crashing while in the middle of processing a message. In this case because we have thought about this eventuality and implemented a "processing" queue the message is not lost when a processor dies.
