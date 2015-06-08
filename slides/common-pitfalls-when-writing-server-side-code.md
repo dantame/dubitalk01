@@ -11,21 +11,21 @@
 
 note:
 
-    Logging and monitoring are your only window into how your code is running and performing, without them it is essentially a black box. If any errors do occur without any logging or monitoring in place, it is nigh impossible to diagnose them. If you make any optimisations in your code you also want to be able to compare before + after to see what effect it has had. It is also important to ship your logs to a different place than the box that your server is running on incase of hardware failure.
+Logging and monitoring are your only window into how your code is running and performing, without them it is essentially a black box. If any errors do occur without any logging or monitoring in place, it is nigh impossible to diagnose them. If you make any optimisations in your code you also want to be able to compare before + after to see what effect it has had. It is also important to ship your logs to a different place than the box that your server is running on incase of hardware failure.
 
-    This is more of a general programming thing than anything but it is especially important that you can tweak your server from config. This helps iteratively arrive at a solution faster than editing code and re-deploying the server. A simple restart with different environment variables will always be much faster (Just make sure that you make notes of your final configuration so that it can be baked into something like Chef or a config file).
+This is more of a general programming thing than anything but it is especially important that you can tweak your server from config. This helps iteratively arrive at a solution faster than editing code and re-deploying the server. A simple restart with different environment variables will always be much faster (Just make sure that you make notes of your final configuration so that it can be baked into something like Chef or a config file).
 
-    It may be ok on the client side to leak 1mb of memory per user over 24 hours but in the server if we assume that 1000 users are using our service over the same time period that would equate to 1gb of leaked memory. Small problems can blow up fast.
+It may be ok on the client side to leak 1mb of memory per user over 24 hours but in the server if we assume that 1000 users are using our service over the same time period that would equate to 1gb of leaked memory. Small problems can blow up fast.
 
-    By keeping state in a processes memory you are greatly hindering your ability to deploy and update code in any timely manner. If you have to wait for your server to "drain" of all users because you are storing their connections or state in memory then it becomes very cumbersome to react to any issues that may arise. If you aim for a stateless process, it can be restarted at any time and pickup where it left off (Although you may interrupt the job that was executing at that time) which means rolling restarts on deploy become a possibility.
+By keeping state in a processes memory you are greatly hindering your ability to deploy and update code in any timely manner. If you have to wait for your server to "drain" of all users because you are storing their connections or state in memory then it becomes very cumbersome to react to any issues that may arise. If you aim for a stateless process, it can be restarted at any time and pickup where it left off (Although you may interrupt the job that was executing at that time) which means rolling restarts on deploy become a possibility.
 
-    It is very important to consider what OS you are running your code on. OS level configuration like "ulimit" which governs how many socket connections among other things can be open for your process at any one time can be a major blocker if you are not aware of them.
+It is very important to consider what OS you are running your code on. OS level configuration like "ulimit" which governs how many socket connections among other things can be open for your process at any one time can be a major blocker if you are not aware of them.
 
-    If your process dies, you need to have a strategy to figure out:
+If your process dies, you need to have a strategy to figure out:
 
-    - Why?
-    - When?
-    - How many users were affected and for how long?
-    - Did it restart succesfully?
+- Why?
+- When?
+- How many users were affected and for how long?
+- Did it restart succesfully?
 
-    Generally this means logging but it is also important to consider a daemon or process manager that will restart your server if it does go down automatically.
+Generally this means logging but it is also important to consider a daemon or process manager that will restart your server if it does go down automatically.

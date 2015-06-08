@@ -26,8 +26,8 @@
 
 note:
 
-    You can remedy this slightly with static analysis tools such as Linters / FlowType from facebook
+You can remedy this slightly with static analysis tools such as Linters / FlowType from facebook
 
-    Bitcoin miners are a no go! This is because node is inherently single threaded by nature and can only process one path of execution at a time.
+Bitcoin miners are a no go! This is because node is inherently single threaded by nature and can only process one path of execution at a time.
 
-    Because you don't have the traditional constructs such as Classes / Interfaces / Namespaces it becomes important to really understand your architecture very well and to understand the various methods that can be used to mimic these constructs in JS.
+Because you don't have the traditional constructs such as Classes / Interfaces / Namespaces it becomes important to really understand your architecture very well and to understand the various methods that can be used to mimic these constructs in JS.

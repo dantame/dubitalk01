@@ -11,14 +11,14 @@
 
 
 note:
-    Seems pretty simple right? But that is a very vague explanation
+Seems pretty simple right? But that is a very vague explanation
 
-    Some common characteristics of distributed systems are:
+Some common characteristics of distributed systems are:
 
-    If one of your database shards loses connectivity to the network, the others should be able to reconfigure and maintain service until connection is regained
+If one of your database shards loses connectivity to the network, the others should be able to reconfigure and maintain service until connection is regained
 
-    e.g. a database, message router, message processor which all have a single responsibility
+e.g. a database, message router, message processor which all have a single responsibility
 
-    If you are seeing that your message routers are struggling to keep up with the amount of messages that are incoming, you should be able to add more to spread the load without modifying any code
+If you are seeing that your message routers are struggling to keep up with the amount of messages that are incoming, you should be able to add more to spread the load without modifying any code
 
-    It is much easier for outside developers and users to consider that they are interacting with one service rather than a collection of multiple smaller components, they should not need to be concerned with your implementation just the API that you expose.
+It is much easier for outside developers and users to consider that they are interacting with one service rather than a collection of multiple smaller components, they should not need to be concerned with your implementation just the API that you expose.
