@@ -1,20 +1,17 @@
-##  Scaling distributed systems
+##  But it's not that simple...
 
 -------------
 
-- Need more message throughput? <!-- .element: class="fragment" data-fragment-index="1" -->
-    * Scale your relay servers <!-- .element: class="fragment" data-fragment-index="2" -->
-- Need more processing power? <!-- .element: class="fragment" data-fragment-index="3" -->
-    * Scale your processor servers <!-- .element: class="fragment" data-fragment-index="4" -->
-- Are the queues starting to chug? <!-- .element: class="fragment" data-fragment-index="5" -->
-    * Scale your redis cluster <!-- .element: class="fragment" data-fragment-index="6" -->
+**'CAP' theorem stands for:** <!-- .element: class="fragment" data-fragment-index="1" -->
+
+**Consistency** <!-- .element: class="fragment" data-fragment-index="1" -->
+
+**Availability** <!-- .element: class="fragment" data-fragment-index="1" -->
+
+**Partition tolerance** <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
-    It is a pretty simple formula and since each component is responsible for a single thing and all state is stored inside redis (which handles the scaling of state for us for the most part). It is really simple to be able to scale a system like this.
-
     Ofcourse if the system is not as simple then it becomes harder and considerations have to be made using CAP Theorem.
-
-    CAP theorem stands for:
 
     - Consistency (all nodes see the same data at the same time)
     - Availability (a guarantee that every request receives a response about whether it succeeded or failed)

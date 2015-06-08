@@ -1,14 +1,19 @@
 ##  Common pitfalls when writing server side code
 
+-------------
+
 - Poor / no logging or monitoring strategy <!-- .element: class="fragment" data-fragment-index="1" -->
-- Not realising that every tiny problem can be easily amplified by a factor of a thousand <!-- .element: class="fragment" data-fragment-index="2" -->
-- Keeping any state in memory in a process <!-- .element: class="fragment" data-fragment-index="3" -->
-- Not considering the underlying host that you are running your code on <!-- .element: class="fragment" data-fragment-index="4" -->
-- Not considering what happens in the event of your process dying <!-- .element: class="fragment" data-fragment-index="5" -->
+- Hardcoding things that could be specified in config <!-- .element: class="fragment" data-fragment-index="2" -->
+- Not realising that every tiny problem can be easily amplified by a factor of a thousand <!-- .element: class="fragment" data-fragment-index="3" -->
+- Keeping any state in memory in a process <!-- .element: class="fragment" data-fragment-index="4" -->
+- Not considering the underlying host that you are running your code on <!-- .element: class="fragment" data-fragment-index="5" -->
+- Not considering what happens in the event of your process dying <!-- .element: class="fragment" data-fragment-index="6" -->
 
 note:
 
     Logging and monitoring are your only window into how your code is running and performing, without them it is essentially a black box. If any errors do occur without any logging or monitoring in place, it is nigh impossible to diagnose them. If you make any optimisations in your code you also want to be able to compare before + after to see what effect it has had. It is also important to ship your logs to a different place than the box that your server is running on incase of hardware failure.
+
+    This is more of a general programming thing than anything but it is especially important that you can tweak your server from config. This helps iteratively arrive at a solution faster than editing code and re-deploying the server. A simple restart with different environment variables will always be much faster (Just make sure that you make notes of your final configuration so that it can be baked into something like Chef or a config file).
 
     It may be ok on the client side to leak 1mb of memory per user over 24 hours but in the server if we assume that 1000 users are using our service over the same time period that would equate to 1gb of leaked memory. Small problems can blow up fast.
 
